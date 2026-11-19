@@ -38,10 +38,6 @@
             lblCount = new ToolStripStatusLabel();
             dataGridView1 = new DataGridView();
             dataGridView2 = new DataGridView();
-            NUmber = new DataGridViewTextBoxColumn();
-            Англи = new DataGridViewTextBoxColumn();
-            Монгол = new DataGridViewTextBoxColumn();
-            Орос = new DataGridViewTextBoxColumn();
             panelTop.SuspendLayout();
             panelBottom.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -266,7 +262,6 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NUmber, Англи, Монгол, Орос });
             dataGridView1.Dock = DockStyle.Left;
             dataGridView1.Location = new Point(0, 73);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
@@ -295,34 +290,6 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(341, 457);
             dataGridView2.TabIndex = 4;
-            // 
-            // NUmber
-            // 
-            NUmber.HeaderText = "Number";
-            NUmber.MinimumWidth = 6;
-            NUmber.Name = "NUmber";
-            NUmber.ReadOnly = true;
-            // 
-            // Англи
-            // 
-            Англи.HeaderText = "Англи";
-            Англи.MinimumWidth = 6;
-            Англи.Name = "Англи";
-            Англи.ReadOnly = true;
-            // 
-            // Монгол
-            // 
-            Монгол.HeaderText = "Монгол";
-            Монгол.MinimumWidth = 6;
-            Монгол.Name = "Монгол";
-            Монгол.ReadOnly = true;
-            // 
-            // Орос
-            // 
-            Орос.HeaderText = "Орос";
-            Орос.MinimumWidth = 6;
-            Орос.Name = "Орос";
-            Орос.ReadOnly = true;
             // 
             // Form1
             // 
