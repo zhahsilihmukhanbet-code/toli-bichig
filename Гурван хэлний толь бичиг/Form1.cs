@@ -22,6 +22,8 @@ namespace Гурван_хэлний_толь_бичиг
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Text = "Гурван хэлний толь бичиг";
+
             InitDb();
             InitSavedDb();
 
@@ -256,6 +258,7 @@ namespace Гурван_хэлний_толь_бичиг
 
             ClearInputs();
             LoadData();
+            LoadSaved();
             MessageBox.Show("Үг амжилттай нэмэгдлээ.");
         }
 
@@ -277,6 +280,7 @@ namespace Гурван_хэлний_толь_бичиг
 
             ClearInputs();
             LoadData();
+            LoadSaved();
             MessageBox.Show("Үг амжилттай засагдлаа.");
         }
 
@@ -294,6 +298,7 @@ namespace Гурван_хэлний_толь_бичиг
                 Execute(_toliConn, "DELETE FROM words WHERE id = $id", ("$id", _selectedId));
                 ClearInputs();
                 LoadData();
+                LoadSaved();
                 MessageBox.Show("Үг устгагдлаа.");
             }
         }
