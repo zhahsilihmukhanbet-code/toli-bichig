@@ -133,6 +133,7 @@ namespace Гурван_хэлний_толь_бичиг
             dataGridView1.Columns["eng"].HeaderText = "Англи";
             dataGridView1.Columns["mon"].HeaderText = "Монгол";
             dataGridView1.Columns["rus"].HeaderText = "Орос";
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             UpdateStatusCount(table.Rows.Count);
         }
@@ -154,6 +155,7 @@ namespace Гурван_хэлний_толь_бичиг
             dataGridView2.Columns["eng"].HeaderText = "Англи";
             dataGridView2.Columns["mon"].HeaderText = "Монгол";
             dataGridView2.Columns["rus"].HeaderText = "Орос";
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void UpdateStatusCount(int wordCount)
@@ -256,6 +258,7 @@ namespace Гурван_хэлний_толь_бичиг
                 ("$m", txtMon.Text.Trim()), ("$r", txtRus.Text.Trim()));
             LoadSaved();
             LoadData();
+            MessageBox.Show("Санасан үгэнд хадгалагдлаа.");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
