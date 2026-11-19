@@ -190,6 +190,18 @@ namespace Гурван_хэлний_толь_бичиг
             return true;
         }
 
+        private bool WordExists(string eng)
+        {
+            using (var conn = new SqliteConnection(_toliConn))
+            {
+                conn.Open();
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT COUNT(*) FROM words WHERE LOWER(eng) = LOWER($e)";
+                cmd.Parameters.AddWithValue("$e", eng.Trim());
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
         // --- Хайлтын хэсгийн Enter / Leave функцүүд ---
         private void txtSearch_Enter(object sender, EventArgs e)
         {
@@ -249,6 +261,12 @@ namespace Гурван_хэлний_толь_бичиг
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!InputsValid()) return;
+
+            if (WordExists(txtEng.Text))
+            {
+                MessageBox.Show("Энэ англи үг аль хэдийн толь бичигт байна.");
+                return;
+            }
 
             Execute(_toliConn,
                 "INSERT INTO words (eng, mon, rus) VALUES ($e, $m, $r)",
